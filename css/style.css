@@ -1,0 +1,336 @@
+#searchResults{
+    border-bottom: 2px solid rgb(218, 218, 218);
+    border-left: 2px solid rgb(218, 218, 218);
+    border-right: 2px solid rgb(218, 218, 218);
+    max-height: 30vh;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+#ingredientList{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#searchResults ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+#searchResults ul li{
+    background-color: white;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#searchResults ul li:nth-child(even){
+    background-color: rgb(238, 245, 253);
+}
+
+#searchResults ul li:hover{
+    background-color: rgb(205, 218, 255);
+}
+
+.visible{
+    animation: fadeIn;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.hidden{
+    animation-name: fadeOut;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    0%{opacity: 1;}
+    99%{opacity: 0;}
+    100%{visibility: hidden; display: none;}
+}
+
+@keyframes fadeIn {
+    0%{opacity: 0; visibility: visible; display: block;}
+    100%{opacity: 1;}
+}
+
+#preview{
+    max-width: 300px;
+    max-height: auto;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.invalid{
+    border-color: var(--bs-form-invalid-border-color);
+    padding-right: calc(1.5em + .75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+.invalid:focus{
+    border-color: var(--bs-form-invalid-border-color) !important;
+    box-shadow: 0 0 0 .25rem rgba(var(--bs-danger-rgb), .25);
+}
+
+.valid{
+    border-color: var(--bs-form-valid-border-color);
+    padding-right: calc(1.5em + .75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+
+.appendbtn{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+/* svg {
+  height: 90vh;
+  margin: auto;
+  display: block;
+} */
+
+path {
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+path.grey {
+  stroke: lightgrey;
+}
+
+path.foreground {
+  --danger_color: rgba(255, 0, 0, 0.61);
+  --normal_color:rgb(0, 134, 18);
+  --current_fill_percent:0;
+  stroke: var(--normal_color);
+  stroke-dasharray: calc(40 * 3.14 * 1.571);
+  stroke-dashoffset: calc(40 * 3.14 * 1.571 * calc(1 - var(--current_fill_percent)));
+  transition: stroke-dashoffset 1s ease;
+  /* adjust last number for variance */
+}
+
+dialog::backdrop{
+    backdrop-filter: blur(2px);
+}
+
+.dialogquantity{
+    min-width:100% !important;
+    
+}
+
+dialog{
+    overflow-x: hidden;
+}
+
+.outofdialog{
+    position: relative;
+    right: 0%;
+    transition: all 300ms;
+}
+
+.insideofdialog{
+    position: relative;
+    right: 100%;
+    transition: all 300ms;
+}
+
+.indicator{
+    width: 100%;
+    max-width: 600px;
+}
+
+.pages{
+    display: flex;
+    flex-direction: row;
+    transition: all 300ms;
+}
+
+.page{
+    padding: 30px;
+    min-width: 100%;
+}
+
+select{
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+}
+
+.optdiv{
+    width: 10px !important;
+    overflow: hidden;
+}
+
+.mealIndicator{
+    max-width: 100px;
+}
+
+.mealIndicator path{
+    stroke-width: 6;
+}
+
+.circleBg{
+    stroke: lightgrey;
+}
+
+.circleFg{
+    --danger_color: rgba(255, 0, 0, 0.61);
+    --normal_color:rgb(0, 134, 18);
+    --current_fill_percent:0;
+    stroke: var(--normal_color);
+    stroke-dasharray: calc(80 * 3.14);
+    stroke-dashoffset: calc(80 * 3.14 * calc(1 - var(--current_fill_percent)));
+    transition: stroke-dashoffset 1s ease;
+}
+
+.circle-btn{
+    margin-right: 10px;
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgb(71, 71, 71);
+    transition: all 0.3s;
+    background-color: white;
+}
+
+.circle-btn:hover{
+    background-color: rgb(221, 221, 221);
+    transition: all 0.3s;
+}
+
+.plus{
+    stroke:rgb(71, 71, 71);
+    stroke-width: 3;
+}
+
+
+dialog select{
+    max-height: 50px;
+}
+
+#activityDialog{
+    width: 30vw;
+    max-width: 800px;
+    min-width: 320px;
+}
+
+.activityListItem{
+    border: 1px solid black;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: all 0.4s ease;
+}
+
+.macroProgress{
+    transition: width 1s;
+    accent-color: green;
+}
+
+.hide{
+    opacity: 0;
+}
+
+.dateButton{
+    transition: all 0.2s ease;
+}
+
+.dateButton:disabled{
+    opacity: 0.1 !important;
+    transition: all 0.2s ease;
+}
+
+.recipeImg{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-bottom-left-radius: 10px;
+}
+
+.recipeImgBig{
+    max-height: 30vh;
+    max-width: 90vw;
+}
+
+.recipeCard{
+    background-color: #ffffff;
+    padding: 0px;
+    border: 1px solid rgb(146, 146, 146);
+    border-radius: 10px;   
+    box-shadow: var(--bs-box-shadow);
+}
+
+.recipeCardHeader{
+    padding: 10px;
+    border-bottom: 1px solid rgb(146, 146, 146);
+    font-size: larger;
+}
+
+.recipeDataText{
+    color: black;
+}
+
+.fireIcon{
+    /*-webkit-text-fill-color: transparent;
+    background-image: linear-gradient(red, orange);
+    background-clip: text;*/
+    color: black;
+    font-size: x-large;
+}
+
+.navbarOffset{
+    padding-top: 56px !important;
+}
+
+.navbarOffsetMargin{
+    margin-top: 56px !important;
+}
+
+.brandImage{
+    z-index: -10;
+    background: url("../img/bgimage.jpg");
+    height: 50vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    
+}
+
+.bodyBgDark{
+    background-color: #515355;
+}
+
+.ingredientli{
+    background-color: #eeeeee94;
+    border-radius: 10px;
+}
+
+.listIcon{
+    color: lightgray;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
